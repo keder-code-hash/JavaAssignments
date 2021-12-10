@@ -24,9 +24,9 @@ public class SavingsAccount extends Account{
 	}
 
 	@Override
-	public double withdrawl(double amount) throws BankWithDrawlException {
+	public double withdrawl(double amount) throws BankWithDrawlException,NegativeBalanceException {
 		if(amount > this.balance) {
-			throw new BankWithDrawlException(amount,balance);
+			throw new NegativeBalanceException("\nBalanace : "+this.balance+". Withdrawl Amount: "+amount+" \n Operation can't be performed");
 		}
 		if(this.balance-amount < this.minimumAount) {
 			throw new BankWithDrawlException(this.minimumAount, this.balance-amount,this.balance);

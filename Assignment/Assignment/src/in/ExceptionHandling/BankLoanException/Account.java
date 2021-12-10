@@ -55,5 +55,5 @@ public abstract class Account {
 	public abstract double getBalance();
 	public abstract String getBankType();
 	public abstract void deposit(double amount);
-	public abstract double withdrawl(double amount)throws BankWithDrawlException;
+	public abstract double withdrawl(double amount)throws BankWithDrawlException, NegativeBalanceException;
 }
